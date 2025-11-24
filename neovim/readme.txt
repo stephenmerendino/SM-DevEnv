@@ -1,7 +1,12 @@
 Setting up Neovim on Windows
 1. Run setup.bat
 
-2. Install Clang
+3. Run :PlugInstall from inside nvim
+
+2. Install Clang to PATH
     https://github.com/llvm/llvm-project/releases
 
-3. Run :PlugInstall from inside nvim
+4. Install lua-language-server to PATH
+    https://github.com/LuaLS/lua-language-server/releases
+
+4. Run :Mason and install clangd, lua-language-server
