@@ -20,11 +20,10 @@ cmp.setup({
     window = {
         -- completion = cmp.config.window.bordered(),
         -- documentation = cmp.config.window.bordered(),
-        
     },
-    completion = {
-        completeopt = 'menu,menuone,noinsert'
-    },
+    -- completion = {
+    --     completeopt = 'menu,menuone,noinsert'
+    -- },
     mapping = cmp.mapping.preset.insert({
         ['<C-p>'] = cmp.mapping.scroll_docs(-4),
         ['<C-n>'] = cmp.mapping.scroll_docs(4),

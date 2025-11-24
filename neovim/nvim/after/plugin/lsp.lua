@@ -6,5 +6,6 @@ vim.lsp.config('luals', {
   root_markers = {'.luarc.json', '.luarc.jsonc'},
   capabilities=cmp_capabilities
 })
-
 vim.lsp.enable('luals')
+
+vim.lsp.enable('clangd')
