@@ -12,5 +12,7 @@ Plug ('mbbill/undotree')
 Plug ('tpope/vim-fugitive')
 Plug ('nvim-tree/nvim-web-devicons')
 Plug ('nvim-tree/nvim-tree.lua')
+Plug ('mason-org/mason.nvim')
+Plug ('neovim/nvim-lspconfig')
 
 vim.call('plug#end')
