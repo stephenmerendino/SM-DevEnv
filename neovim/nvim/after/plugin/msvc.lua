@@ -2,7 +2,7 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = {"cpp", "cxx", "cc", "h", "hpp"},  -- add extensions as needed
     callback = function()
         vim.bo.makeprg = "build.bat"
-        vim.bo.errorformat = "%f:%l:%c: %m"
+        vim.bo.errorformat = "%f(%l): error C%n: %m,%f(%l): warning C%n: %m"
     end,
 })
 
