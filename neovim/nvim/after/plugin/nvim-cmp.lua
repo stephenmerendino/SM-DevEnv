@@ -22,6 +22,9 @@ cmp.setup({
         -- documentation = cmp.config.window.bordered(),
         
     },
+    completion = {
+        completeopt = 'menu,menuone,noinsert'
+    },
     mapping = cmp.mapping.preset.insert({
         ['<C-p>'] = cmp.mapping.scroll_docs(-4),
         ['<C-n>'] = cmp.mapping.scroll_docs(4),
@@ -39,7 +42,6 @@ cmp.setup({
         { name = 'buffer' },
     })
 })
-
 -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
 -- Set configuration for specific filetype.
 --[[ cmp.setup.filetype('gitcommit', {

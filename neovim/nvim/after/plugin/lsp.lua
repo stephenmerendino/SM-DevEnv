@@ -7,5 +7,4 @@ vim.lsp.config('luals', {
   capabilities=cmp_capabilities
 })
 
-
 vim.lsp.enable('luals')

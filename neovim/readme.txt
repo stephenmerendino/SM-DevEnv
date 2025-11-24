@@ -9,4 +9,4 @@ Setting up Neovim on Windows
 4. Install lua-language-server to PATH
     https://github.com/LuaLS/lua-language-server/releases
 
-4. Run :Mason and install clangd, lua-language-server
+5. Run :Mason and install clangd, lua-language-server
