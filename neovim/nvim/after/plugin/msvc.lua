@@ -24,7 +24,6 @@ vim.api.nvim_create_autocmd("FileType", {
         end
 
         if buildbat then
-            -- Always quote Windows paths!
             vim.bo.makeprg = '"' .. buildbat .. '"'
         else
             local filename = vim.fn.expand('%:t')
@@ -53,8 +52,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     pattern = { "make" },
     callback = function()
-        print("Should Open cwindow")
-        vim.cmd("cwindow")
+        vim.cmd("copen")
     end,
 })
 

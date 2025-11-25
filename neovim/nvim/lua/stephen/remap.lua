@@ -56,3 +56,12 @@ end)
 
 -- Switch between header/source files
 vim.keymap.set("n", "<leader>o", "<cmd>ClangdSwitchSourceHeader<CR>")
+
+-- C++ editing & building
+vim.keymap.set("n", "<F5>", ":make<CR>", { noremap=true, silent=false})
+vim.keymap.set('n', '<S-F5>', function()
+  -- Build your command
+  local exe = vim.fn.expand('%:p:h') .. '/Build/' .. vim.fn.expand('%:r') .. '.exe'
+  vim.cmd('terminal "' .. exe .. '"')
+end, { noremap=true, silent=true })
+vim.keymap.set('n', '<F9>', ':copen<CR>', { noremap=true, silent=true })
