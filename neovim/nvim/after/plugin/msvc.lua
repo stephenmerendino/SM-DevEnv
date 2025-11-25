@@ -33,12 +33,12 @@ vim.api.nvim_create_autocmd("FileType", {
             local pdb_path = join_path(builddir, basename .. ".pdb")
             local obj_path = join_path(builddir, basename .. ".obj")
             vim.bo.makeprg = table.concat({
-                'mkdir "' .. builddir .. '" 2>nul',
+                'mkdir "' .. builddir .. '" >nul 2>&1',
                 'cl.exe /nologo /EHsc /Od /Zi ' ..
                 '/Fe"' .. exe_path .. '" ' ..
                 '/Fd"' .. pdb_path .. '" ' ..
                 '/Fo"' .. obj_path .. '" "' .. fname .. '"'
-            }, " && ")
+            }, " & ")
         end
 
         vim.bo.errorformat = table.concat({
@@ -52,7 +52,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     pattern = { "make" },
     callback = function()
-        vim.cmd("copen")
+        vim.cmd("cwindow")
     end,
 })
 
