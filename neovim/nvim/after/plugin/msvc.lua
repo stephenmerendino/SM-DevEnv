@@ -3,7 +3,7 @@ vim.api.nvim_create_autocmd("FileType", {
     callback = function()
         local fname = vim.api.nvim_buf_get_name(0)
         local fdir = vim.fn.fnamemodify(fname, ":p:h")
-        local dir = fdir        
+        local dir = fdir
 
         -- Function to join paths (since Windows uses \ while Neovim prefers /)
         local function join_path(...)
