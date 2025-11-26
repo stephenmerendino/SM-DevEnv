@@ -14,6 +14,7 @@ Plug ('nvim-tree/nvim-web-devicons')
 Plug ('nvim-tree/nvim-tree.lua')
 Plug ('mason-org/mason.nvim')
 Plug ('neovim/nvim-lspconfig')
+Plug ('windwp/nvim-autopairs')
 
 --nvim-cmp
 Plug ('hrsh7th/cmp-nvim-lsp')
