@@ -59,6 +59,7 @@ vim.keymap.set("n", "<leader>o", "<cmd>ClangdSwitchSourceHeader<CR>")
 
 -- C++ editing & building
 vim.keymap.set("n", "<F5>", ":make<CR>", { noremap=true, silent=false})
+--vim.keymap.set("n", "<S-F5>", ":make release<CR>", { noremap=true, silent=false})
 --vim.keymap.set('n', '<S-F5>', function()
 --    local fname = vim.api.nvim_buf_get_name(0)
 --    local fdir = vim.fn.fnamemodify(fname, ":p:h")
@@ -91,3 +92,14 @@ vim.keymap.set("n", "<F5>", ":make<CR>", { noremap=true, silent=false})
 --    end
 --end, { noremap=true, silent=true })
 vim.keymap.set('n', '<F9>', ':copen<CR>', { noremap=true, silent=true })
+
+-- Diagnostic
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', function()
+  vim.diagnostic.goto_prev()
+  vim.diagnostic.open_float()
+end)
+vim.keymap.set('n', ']d', function()
+  vim.diagnostic.goto_next()
+  vim.diagnostic.open_float()
+end)

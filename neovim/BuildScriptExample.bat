@@ -4,7 +4,7 @@ set BaseFilename=test
 set MainDir=%~dp0
 set BuildDir=%MainDir%Build\
 
-mkdir %BuildDir%
+mkdir %BuildDir% >nul 2>&1
 
 set ExeOutput=%BuildDir%%BaseFilename%.exe
 set PdbOutput=%BuildDir%%BaseFilename%.pdb
