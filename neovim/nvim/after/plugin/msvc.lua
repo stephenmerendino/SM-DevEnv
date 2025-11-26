@@ -52,7 +52,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     pattern = { "make" },
     callback = function()
-        vim.cmd("cwindow")
+        vim.cmd("rightbelow vert copen 160")
     end,
 })
 
