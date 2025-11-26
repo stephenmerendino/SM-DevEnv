@@ -15,6 +15,10 @@ Plug ('nvim-tree/nvim-tree.lua')
 Plug ('mason-org/mason.nvim')
 Plug ('neovim/nvim-lspconfig')
 Plug ('windwp/nvim-autopairs')
+Plug ('numToStr/Comment.nvim')
+Plug ('kylechui/nvim-surround')
+Plug ('nvim-lualine/lualine.nvim')
+Plug ('stevearc/aerial.nvim')
 
 --nvim-cmp
 Plug ('hrsh7th/cmp-nvim-lsp')

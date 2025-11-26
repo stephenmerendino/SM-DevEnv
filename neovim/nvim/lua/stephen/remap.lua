@@ -60,40 +60,9 @@ vim.keymap.set("n", "<leader>o", "<cmd>ClangdSwitchSourceHeader<CR>")
 -- C++ editing & building
 vim.keymap.set("n", "<F5>", ":make<CR>", { noremap=true, silent=false})
 --vim.keymap.set("n", "<S-F5>", ":make release<CR>", { noremap=true, silent=false})
---vim.keymap.set('n', '<S-F5>', function()
---    local fname = vim.api.nvim_buf_get_name(0)
---    local fdir = vim.fn.fnamemodify(fname, ":p:h")
---    local dir = fdir
---
---    local filename = vim.fn.expand('%:t')
---    local basename = vim.fn.fnamemodify(filename, ":r")
---    local exe_path = basename .. ".exe"
---
---    local function join_path(...)
---        return table.concat({...}, package.config:sub(1,1))
---    end
---
---    local exe = nil
---    while dir and dir ~= "" do
---        local candidate = join_path(dir, "Build")
---        candidate = join_path(candidate, exe_path)
---        if vim.fn.filereadable(candidate) == 1 then
---            exe = candidate
---            break
---        end
---        local parent = vim.fn.fnamemodify(dir, ":h")
---        if parent == dir then break end  -- at root
---        dir = parent
---    end
---
---    -- Build your command
---    if exe then
---        vim.cmd('terminal "' .. exe .. '"')
---    end
---end, { noremap=true, silent=true })
 vim.keymap.set('n', '<F9>', ':copen<CR>', { noremap=true, silent=true })
 
--- Diagnostic
+-- Diagnostic hotkeys
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', function()
   vim.diagnostic.goto_prev()
@@ -103,3 +72,6 @@ vim.keymap.set('n', ']d', function()
   vim.diagnostic.goto_next()
   vim.diagnostic.open_float()
 end)
+
+-- Toggle open class/method view with aerial 
+vim.keymap.set("n", "<leader>pp", "<cmd>AerialToggle!<CR>")
