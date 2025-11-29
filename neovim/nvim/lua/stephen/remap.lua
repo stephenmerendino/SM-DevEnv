@@ -43,6 +43,12 @@ vim.keymap.set("n", "<leader>f", function()
     vim.lsp.buf.format()
 end)
 
+-- Convert snake case to camel case
+vim.keymap.set("n", "<leader>r", function()
+  vim.cmd([[s#_\(\l\)#\u\1#g]])
+  vim.cmd([[s#_##g]])
+end)
+
 -- Quickfix navigation
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")

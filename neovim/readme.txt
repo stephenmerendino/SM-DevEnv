@@ -1,5 +1,8 @@
 Setting up Neovim on Windows
-1. Run setup.bat
+1. Install ripgrep
+    https://github.com/BurntSushi/ripgrep/releases
+
+2. Run setup.bat
 
 3. Run :PlugInstall from inside nvim
 
