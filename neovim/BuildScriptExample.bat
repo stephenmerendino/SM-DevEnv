@@ -25,3 +25,5 @@ mkdir %BuildDir% >nul 2>&1
 cl %CompilerFlags% %FilesToCompile% %Libs% %OutputFiles% %LinkerFlags%
 
 ENDLOCAL
+
+EXIT /b %ERRORLEVEL%
