@@ -52,7 +52,11 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     pattern = { "make" },
     callback = function()
-        vim.cmd("copen")
+        if vim.v.shell_error ~= 0 then
+            vim.cmd("copen")
+        else
+            vim.cmd("cclose")
+        end
     end,
 })
 

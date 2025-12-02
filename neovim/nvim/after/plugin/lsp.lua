@@ -13,7 +13,7 @@ vim.lsp.enable('luals')
 vim.lsp.config('cppls', {
   cmd = {'clangd'},
   filetypes = {'c', 'cpp', 'cxx'},
-  --root_markers = {'.luarc.json', '.luarc.jsonc'},
+  root_markers = {'compile_commands.json'},
   capabilities=cmp_capabilities
 })
 vim.lsp.enable('cppls')
