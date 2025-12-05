@@ -10,10 +10,10 @@ vim.lsp.config('luals', {
 vim.lsp.enable('luals')
 
 -- C/C++
-vim.lsp.config('cppls', {
-  cmd = {'clangd'},
-  filetypes = {'c', 'cpp', 'cxx'},
-  root_markers = {'compile_commands.json'},
-  capabilities=cmp_capabilities
-})
-vim.lsp.enable('cppls')
+--vim.lsp.config('cppls', {
+--  cmd = {'clangd'},
+--  filetypes = {'c', 'cpp', 'cxx'},
+--  root_markers = {'compile_commands.json'},
+--  capabilities=cmp_capabilities
+--})
+vim.lsp.enable('clangd')

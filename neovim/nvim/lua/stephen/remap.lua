@@ -61,7 +61,7 @@ vim.keymap.set("n", "<leader>qf", function()
 end)
 
 -- Switch between header/source files
-vim.keymap.set("n", "<leader>o", "<cmd>ClangdSwitchSourceHeader<CR>")
+vim.keymap.set("n", "<leader>o", "<cmd>LspClangdSwitchSourceHeader<CR>")
 
 -- C++ editing & building
 vim.keymap.set("n", "<F5>", ":make<CR>", { noremap=true, silent=false})
