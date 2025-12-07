@@ -13,3 +13,9 @@ Setting up Neovim on Windows
     https://github.com/LuaLS/lua-language-server/releases
 
 5. Run :Mason and install clangd, lua-language-server
+
+
+TODO
+[] Check out hardtime.nvim and precognition.nvim to learn vim better
+[] Get lua auto completion working better for the base "vim" command in lua scripts not auto completing well
+[] Check out snacks.nvim for nice stuff I might be missing out on
