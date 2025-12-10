@@ -1,5 +1,5 @@
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"cpp", "cxx", "cc", "c"},  -- add extensions as needed
+    pattern = {"*"},  -- add extensions as needed
     callback = function()
         -- We never want the following options
         vim.opt_local.formatoptions:remove({

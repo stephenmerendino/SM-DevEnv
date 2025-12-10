@@ -50,10 +50,10 @@ vim.keymap.set("n", "<leader>r", function()
 end)
 
 -- Quickfix navigation
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 
 -- Bring up code action menu
 vim.keymap.set("n", "<leader>qf", function()
@@ -61,7 +61,7 @@ vim.keymap.set("n", "<leader>qf", function()
 end)
 
 -- Switch between header/source files
-vim.keymap.set("n", "<leader>o", "<cmd>LspClangdSwitchSourceHeader<CR>")
+vim.keymap.set("n", "<leader>o", "<cmd>ClangdSwitchSourceHeader<CR>")
 
 -- C++ editing & building
 vim.keymap.set("n", "<F5>", ":make<CR>", { noremap=true, silent=false})
