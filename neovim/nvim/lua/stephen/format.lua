@@ -1,6 +1,5 @@
 vim.api.nvim_create_autocmd("FileType", {
-    group = autogroup,
-    pattern = "*",
+    pattern = {"cpp", "cxx", "cc", "c"},  -- add extensions as needed
     callback = function()
         -- We never want the following options
         vim.opt_local.formatoptions:remove({
@@ -11,7 +10,7 @@ vim.api.nvim_create_autocmd("FileType", {
             -- Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
             "o",
             -- Automatically insert the current comment leader after hitting <Enter> in Insert mode.
-            "r",
+            "r"
         })
     end,
 })
@@ -21,4 +20,3 @@ vim.keymap.set("n", "<leader>r", function()
   vim.cmd([[silent! s#_\(\l\)#\u\1#g]])
   vim.cmd([[silent! s#_##g]])
 end)
-
