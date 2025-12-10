@@ -20,3 +20,13 @@ vim.keymap.set("n", "<leader>r", function()
   vim.cmd([[silent! s#_\(\l\)#\u\1#g]])
   vim.cmd([[silent! s#_##g]])
 end)
+
+-- ND
+vim.filetype.add({
+    extension = {
+        fxi="cpp",
+        fx="cpp",
+        dcx="lisp",
+        dc="lisp"
+    }
+})

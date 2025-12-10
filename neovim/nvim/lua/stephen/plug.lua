@@ -20,6 +20,7 @@ Plug ('numToStr/Comment.nvim')
 Plug ('kylechui/nvim-surround')
 Plug ('nvim-lualine/lualine.nvim')
 Plug ('stevearc/aerial.nvim')
+Plug ('dmtrKovalenko/fff.nvim', { ['do']='require("fff.download").download_or_build_binary()'})
 
 --nvim-cmp
 Plug ('hrsh7th/cmp-nvim-lsp')
