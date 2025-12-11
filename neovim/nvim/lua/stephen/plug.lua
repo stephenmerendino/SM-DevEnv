@@ -24,6 +24,7 @@ Plug ('stevearc/aerial.nvim')
 Plug ('dmtrKovalenko/fff.nvim', { ['do']='require("fff.download").download_or_build_binary()'})
 Plug ('motiongorilla/p4nvim')
 Plug ('p00f/clangd_extensions.nvim')
+Plug ('nvimdev/dashboard-nvim')
 
 --nvim-cmp
 Plug ('hrsh7th/cmp-nvim-lsp')
