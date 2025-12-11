@@ -4,7 +4,7 @@ telescope.setup {
         vimgrep_arguments = {
             'rg',
             --'--ignore-file',
-            --'C:/branches/main/.ignore',
+            --'../.rgignore',
             '--color=never',
             '--no-heading',
             '--with-filename',
@@ -14,6 +14,7 @@ telescope.setup {
             '--type-add',
             'nd:*.{fxi,fx,dc,dcx}',
             '-tnd',
+            '-tlua',
             '-tcpp'
         }
     }
