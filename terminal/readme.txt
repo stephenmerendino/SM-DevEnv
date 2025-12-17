@@ -17,3 +17,4 @@ TODO
 [] Check out FlowLauncher
 [] Check out zebar and/or yasb
 [] Check out komorebi and/or glazewm tiling window manager
+[] Check out Windhawk
