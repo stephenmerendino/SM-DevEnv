@@ -15,17 +15,11 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
--- Convert snake case to camel case
-vim.keymap.set("n", "<leader>r", function()
-  vim.cmd([[silent! s#_\(\l\)#\u\1#g]])
-  vim.cmd([[silent! s#_##g]])
-end)
-
 -- ND
 vim.filetype.add({
     extension = {
-        fxi="cpp",
-        fx="cpp",
+        fxi="hlsl",
+        fx="hlsl",
         dcx="lisp",
         dc="lisp"
     }

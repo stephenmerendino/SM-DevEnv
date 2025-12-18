@@ -17,16 +17,16 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Keep clipboard buffer the same when pasting
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("v", "p", "\"_dP", { remap=false, silent=true })
 
 -- Yank to system clipboard with leader
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>y", "\"+Y")
+vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 vim.keymap.set("n", "<leader>p", "\"+p")
 vim.keymap.set("v", "<leader>p", "\"+p")
-vim.keymap.set("n", "<leader>p", "\"+P")
+vim.keymap.set("n", "<leader>P", "\"+P")
 
 -- Delete to void buffer to preserve clipboard
 vim.keymap.set("n", "<leader>d", "\"_d")
@@ -65,8 +65,6 @@ vim.keymap.set("n", "<leader>o", "<cmd>ClangdSwitchSourceHeader<CR>")
 
 -- C++ editing & building
 vim.keymap.set("n", "<F5>", ":make<CR>", { noremap=true, silent=false})
---vim.keymap.set("n", "<S-F5>", ":make release<CR>", { noremap=true, silent=false})
-vim.keymap.set('n', '<F9>', ':copen<CR>', { noremap=true, silent=true })
 
 -- Diagnostic hotkeys
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)

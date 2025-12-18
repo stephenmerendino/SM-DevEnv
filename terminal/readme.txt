@@ -11,10 +11,11 @@ https://www.nerdfonts.com/font-downloads
 4. Run setup.bat
 
 TODO
-[] Check out wezterm
-[] Check out StartAllBack for Windows 11
-[] Check out PowerToys
-[] Check out FlowLauncher
-[] Check out zebar and/or yasb
-[] Check out komorebi and/or glazewm tiling window manager
-[] Check out Windhawk
+[] wezterm
+[] Chocolatey
+[] StartAllBack for Windows 11
+[] PowerToys
+[] FlowLauncher
+[] zebar and/or yasb
+[] komorebi and/or glazewm tiling window manager
+[] Windhawk

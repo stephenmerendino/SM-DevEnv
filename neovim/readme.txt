@@ -21,4 +21,5 @@ Setting up Neovim on Windows
 TODO
 [] Check out hardtime.nvim and precognition.nvim to learn vim better
 [] Get lua auto completion working better for the base "vim" command in lua scripts not auto completing well
+[] nvim-bqf for better quick fix window
 [] Check out snacks.nvim for nice stuff I might be missing out on
