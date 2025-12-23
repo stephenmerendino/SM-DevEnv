@@ -18,6 +18,8 @@ vim.api.nvim_create_autocmd("FileType", {
 -- ND
 vim.filetype.add({
     extension = {
+        hlsl="hlsl",
+        hlsli="hlsl",
         fxi="hlsl",
         fx="hlsl",
         dcx="lisp",
