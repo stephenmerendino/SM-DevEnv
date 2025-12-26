@@ -31,10 +31,15 @@ function Go-To-Kennel {
     Set-Location $NDWorkspace 
 }
 
+function Start-Nd-Shell {
+    c:\ndibin\cygwin\bin\tcsh -l
+}
+
 new-alias -name n nvim
 new-alias -name g git
-new-alias -name work Go-To-Work
+new-alias -name me Go-To-Work
 new-alias -name nd Go-To-Kennel
+new-alias -name ndstart Start-Nd-Shell
 new-alias -name nw Open-Nvim-Workspace 
 
 $VSPath = . "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe" -Latest -Property InstallationPath
