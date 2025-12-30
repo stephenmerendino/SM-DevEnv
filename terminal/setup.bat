@@ -12,4 +12,4 @@ IF EXIST %TargetPs1File% DEL %TargetPs1File%
 mklink %TargetPs1File% %~dp0MainProfile.ps1
 
 REM ECHO %ESC%[32m[neovim] Setup complete!%ESC%[0m
-ECHO [neovim] Setup complete!
+ECHO [windows terminal setup] Setup complete!

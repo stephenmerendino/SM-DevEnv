@@ -1,0 +1,323 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+komorebi:
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop"
+  reload_command: "komorebic stop && komorebic start --whkd"
+bars:
+  status-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: true 
+      acrylic: true
+      dark_mode: false
+      round_corners: false
+      border_color: None
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 28
+    padding:
+      top: 3
+      left: 3
+      bottom: 0
+      right: 3
+    widgets:
+      left: ["komorebi_control", "komorebi_workspaces", "komorebi_active_layout", "komorebi_stack"]
+      center: ["clock"]
+      right: ["battery", "cava", "media", "volume", "power_menu"]
+widgets:
+  cava:
+    type: "yasb.cava.CavaWidget"
+    options:
+      bar_height: 12
+      framerate: 120
+      sleep_timer: 0
+      hide_empty: true
+      gradient: 0
+      foreground: "#e2cca9"
+      container_padding:
+        top: 3
+        right: 2
+        bottom: 3
+        left: 3
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "<span>\uf001</span> {artist} - {title}"
+      hide_empty: true
+      max_field_size:
+        label: 50
+      show_thumbnail: false
+      controls_hide: true
+      thumbnail_alpha: 50
+      thumbnail_padding: 70
+      thumbnail_corner_radius: 5
+      icons:
+        prev_track: "\ue892"
+        next_track: "\ue893"
+        play: "\ue768"
+        pause: "\ue769"
+      callbacks:
+        on_left: "do_nothing"
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "<span>\uf017</span> {%m/%d/%Y | %r}"
+      timezones: [] #Looking up time zone info from registry
+      calendar:
+        alignment: "center"
+      callbacks:
+        on_left: "toggle_calendar"
+        on_right: "do_nothing"
+  taskbar:
+    type: "yasb.taskbar.TaskbarWidget"
+    options:
+      icon_size: 16
+      animation: true
+      ignore_apps:
+        processes: []
+        titles: []
+        classes: []
+      container_padding:
+        top: 0
+        left: 8
+        bottom: 0
+        right: 8
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "\u26a1 Offline"
+      label_workspace_btn: "\udb81\udc3d"
+      label_workspace_active_btn: "\udb81\udc3e"
+      label_workspace_populated_btn: "\udb81\udc3e"
+      label_default_name: "{index}"
+      label_zero_index: true
+      hide_empty_workspaces: false
+      hide_if_offline: true
+      animation: true
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+  weather:
+    type: "yasb.weather.WeatherWidget"
+    options:
+      label: "<span>{icon}</span> {conditions} {temp} \u00b7 \u2193 {min_temp} \u2191 {max_temp} \u00b7 {precip}"
+      api_key: "3bf4cf9a7c3f40d6b31174128242807"
+      update_interval: 600
+      units: "metric"
+      hide_decimal: true
+      location: "Poland Wroclaw"
+      show_alerts: true
+      weather_card:
+        alignment: "center"
+        offset_left: 150
+      callbacks:
+        on_left: "toggle_card"
+      icons:
+        sunnyDay: "\ue30d"
+        clearNight: "\ue32b"
+        cloudyDay: "\udb81\udd99"
+        cloudyNight: "\ue311"
+        rainyDay: "\udb81\ude7e"
+        rainyNight: "\udb81\ude7e"
+        snowyIcyDay: "\udb81\udd98"
+        snowyIcyNight: "\udb81\udd98"
+        blizzardDay: "\uebaa"
+        default: "\uebaa"
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      label_alt: "{volume}"
+      volume_icons:
+        - "\uf507" # Icon for muted
+        - "\uf026" # Icon for 0-10% volume
+        - "\uf027" # Icon for 11-30% volume
+        - "\uf027" # Icon for 31-60% volume
+        - "\uf028" # Icon for 61-100% volume
+      callbacks:
+        on_right: "exec cmd.exe /c start ms-settings:sound"
+        on_middle: "toggle_mute"
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\uf011"
+      uptime: False
+      blur: False
+      blur_background: True
+      animation_duration: 100 # Milisecond
+      button_row: 4 # Number of buttons in row, min 1 max 5
+      buttons:
+        shutdown: ["\uf011", "Shut Down"]
+        restart: ["\uead2", "Restart"]
+        signout: ["\udb80\udf43", "Sign out"]
+        sleep: ["\u23fe", "Sleep"]
+        cancel: ["", "Cancel"]
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[process][name]}"
+      label_alt: ""
+      label_no_window: ""
+      label_icon: true
+      label_icon_size: 14
+      max_length: 40
+      max_length_ellipsis: "..."
+      monitor_exclusive: false
+      callbacks:
+        on_left: "do_nothing"
+  language:
+    type: "yasb.language.LanguageWidget"
+    options:
+      label: "<span>\uf11c</span> {lang[language_code]}"
+      label_alt: "{lang[full_name]}"
+      update_interval: 1
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+      container_padding:
+        bottom: 1
+  battery:
+    type: "yasb.battery.BatteryWidget"
+    options:
+      label: "<span>{icon}</span> {percent}%"
+      label_alt: "<span>{icon}</span> {percent}% | time: {time_remaining}"
+      update_interval: 5000
+      time_remaining_natural: False
+      hide_unsupported: True
+      charging_options:
+        icon_format: "{charging_icon}"
+        blink_charging_icon: true
+        blink_interval: 500
+      status_thresholds:
+        critical: 10
+        low: 25
+        medium: 75
+        high: 95
+        full: 100
+      status_icons:
+        icon_charging: "\uf0e7"
+        icon_critical: "\uf244"
+        icon_low: "\uf243"
+        icon_medium: "\uf242"
+        icon_high: "\uf241"
+        icon_full: "\uf240"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
+  komorebi_control:
+    type: "komorebi.control.KomorebiControlWidget"
+    options:
+      label: "<span>\udb80\uddd9</span>"
+      icons:
+        start: "\uead3"
+        stop: "\uead7"
+        reload: "\uead2"
+      run_ahk: false
+      run_whkd: false
+      run_masir: false
+      show_version: true
+      komorebi_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: 'normal'
+        border_color: 'System'
+        alignment: 'left'
+        direction: 'down'
+        offset_top: 6
+        offset_left: 0
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
+  komorebi_stack:
+    type: "komorebi.stack.StackWidget"
+    options:
+      label_offline: "Offline"
+      label_window: "{process}"
+      label_window_active: "{title}"
+      label_no_window: "No Window"
+      label_zero_index: false
+      show_icons: "always"
+      icon_size: 14
+      max_length: 10
+      max_length_active: 20
+      max_length_ellipsis: ".."
+      hide_if_offline: false
+      show_only_stack: false
+      rewrite:
+        - pattern: "^(.+?)\\.exe$"
+          replacement: "\\1"
+          case: "lower"
+      animation: true
+      enable_scroll_switching : true
+      container_shadow:
+        enabled: true
+        color: "#000000"
+        offset: [0, 1]
+        radius: 2
+      btn_shadow:
+        enabled: true
+        color: "#000000"
+        offset: [0, 1]
+        radius: 2
+      label_shadow:
+        enabled: true
+        color: "#000000"
+        offset: [0, 1]
+        radius: 2
+  komorebi_active_layout:
+    type: "komorebi.active_layout.ActiveLayoutWidget"
+    options:
+      hide_if_offline: true
+      label: "{icon} {layout_name}"
+      layouts: ['bsp', 'columns', 'rows', 'grid', 'scrolling', 'vertical_stack', 'horizontal_stack', 'ultrawide_vertical_stack','right_main_vertical_stack']
+      layout_icons:
+        bsp: "\uebeb"
+        columns: "\uebf7"
+        rows: "\uec01"
+        grid: "\udb81\udf58"
+        scrolling: "\uebf7"
+        vertical_stack: "\uebee"
+        horizontal_stack: "\uebf0"
+        ultrawide_vertical_stack: "\uebee"
+        right_main_vertical_stack: "\uebf1"
+        monocle: "\uf06f"
+        maximized: "\uf06f"
+        floating: "\uf2d2"
+        paused: "\udb83\udf89"
+        tiling: "\udb81\ude40"
+      callbacks:
+        on_left: 'toggle_layout_menu'
+        on_middle: 'next_layout'
+        on_right: 'prev_layout'
+      layout_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "left"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_layout_icons: true
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]

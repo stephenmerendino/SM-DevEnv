@@ -11,7 +11,7 @@ config.font_size = 11
 config.initial_cols = 150
 config.initial_rows = 40
 
-config.window_decorations = 'TITLE | RESIZE'
+--config.window_decorations = 'NONE'
 
 config.color_scheme = 'GruvboxDark'
 
