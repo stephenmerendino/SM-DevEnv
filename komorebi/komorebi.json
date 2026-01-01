@@ -44,6 +44,31 @@
                 }
 
             ]
+        },
+        {
+            "workspaces": [
+                {
+                    "name": "I",
+                    "layout": "BSP"
+                },
+                {
+                    "name": "II",
+                    "layout": "BSP"
+                },
+                {
+                    "name": "III",
+                    "layout": "BSP"
+                },
+                {
+                    "name": "IV",
+                    "layout": "BSP"
+                },
+                {
+                    "name": "V",
+                    "layout": "BSP"
+                }
+
+            ]
         }
     ]
 }
