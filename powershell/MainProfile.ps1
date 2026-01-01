@@ -14,7 +14,7 @@ $NDWorkspace = "C:\branches\main"
 if (Get-Command oh-my-posh -ErrorAction SilentlyContinue)
 {
     Set-ExecutionPolicy RemoteSigned
-    $OhMyPoshConfigPath = $PlayWorkspace + "SM-DevEnv\terminal\gruvbox.omp.json"
+    $OhMyPoshConfigPath = $PlayWorkspace + "SM-DevEnv\powershell\gruvbox.omp.json"
     oh-my-posh init pwsh --config $OhMyPoshConfigPath | Invoke-Expression
 }
 

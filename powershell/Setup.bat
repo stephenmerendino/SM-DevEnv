@@ -2,7 +2,7 @@
 
 REM for /f %%a in ('echo prompt $E^| cmd') do set "ESC=%%a"
 
-ECHO [windows terminal setup] Setting up development environment
+ECHO [powershell setup] Setting up development environment
 
 winget install JanDeDobbeleer.OhMyPosh --source winget
 
@@ -12,4 +12,4 @@ IF EXIST %TargetPs1File% DEL %TargetPs1File%
 mklink %TargetPs1File% %~dp0MainProfile.ps1
 
 REM ECHO %ESC%[32m[neovim] Setup complete!%ESC%[0m
-ECHO [windows terminal setup] Setup complete!
+ECHO [powershell setup] Setup complete!
