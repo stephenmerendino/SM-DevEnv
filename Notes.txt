@@ -1,11 +1,16 @@
 TODO
+//Basic workflow
 [x] Hot keys for opening chrome, wezterm, and file pilot
 [x] Split powershell config from windows terminal
-[] Learn some basic wezterm hot keys
-[] Learn some basic File Pilot hot keys
-[] Look into what we could get from windhawk
+[x] Learn basic wezterm hot keys
+[] Try out using the resurrect wezterm plugin to save and load sessions
+    https://github.com/MLFlexer/resurrect.wezterm
+[] Learn basic File Pilot hot keys
+[] Only enable powertoys I use
+//Neovim
 [] Check out hardtime.nvim and precognition.nvim to learn vim better
 [] nvim-bqf for better quick fix window
 [] Check out snacks.nvim for nice stuff I might be missing out on
+//DevEnv repo setup
 [] Create a single readme for my dev env at the root and put all the instructions in there
 [] Unify naming/capitalization conventions for dev env
