@@ -32,7 +32,7 @@ bars:
       right: 3
     widgets:
       left: ["komorebi_control", "komorebi_workspaces", "komorebi_active_layout", "komorebi_stack"]
-      center: ["notifications", "cava", "media"]
+      center: ["notifications", "clock", "media", "cava"]
       right: ["cpu", "gpu", "memory", "wifi", "battery", "power_menu"]
 widgets:
   cava:
