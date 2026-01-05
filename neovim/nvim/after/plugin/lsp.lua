@@ -71,12 +71,13 @@ vim.lsp.config('lua_ls', {
 })
 
 vim.lsp.enable('lua_ls')
-
 -- C/C++
 vim.lsp.config('clangd', {
-  cmd = {'clangd'},
+  cmd = {'clangd', "--query-driver=C:\\sdk\\prospero\\12.00.00.38\\host_tools\\bin\\prospero-clang.exe"},
   filetypes = {'c', 'cpp', 'cxx'},
   root_markers = {'compile_commands.json'},
   capabilities=cmp_capabilities
 })
 vim.lsp.enable('clangd')
+
+vim.lsp.enable('jedi_language_server')
