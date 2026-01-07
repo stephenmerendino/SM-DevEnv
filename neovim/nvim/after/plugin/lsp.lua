@@ -1,54 +1,10 @@
-local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-
+-------------------------------------------------------------------------------
 -- Lua
 vim.lsp.config('lua_ls', {
     cmd = {'lua-language-server'},
     filetypes = {'lua'},
     root_markers = {'.luarc.json', '.luarc.jsonc'},
     capabilities=cmp_capabilities,
-    on_init = function(client)
-        if client.workspace_folders then
-            local path = client.workspace_folders[1].name
-            if
-                path ~= vim.fn.stdpath('config')
-                and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc'))
-                then
-                    return
-                end
-            end
-
-            client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
-                runtime = {
-                    -- Tell the language server which version of Lua you're using (most
-                    -- likely LuaJIT in the case of Neovim)
-                    version = 'LuaJIT',
-                    -- Tell the language server how to find Lua modules same way as Neovim
-                    -- (see `:h lua-module-load`)
-                    path = {
-                        'lua/?.lua',
-                        'lua/?/init.lua',
-                    },
-                },
-                -- Make the server aware of Neovim runtime files
-                workspace = {
-                    checkThirdParty = false,
-                    library = {
-                        vim.env.VIMRUNTIME
-                        -- Depending on the usage, you might want to add additional paths
-                        -- here.
-                        -- '${3rd}/luv/library'
-                        -- '${3rd}/busted/library'
-                    }
-                    -- Or pull in all of 'runtimepath'.
-                    -- NOTE: this is a lot slower and will cause issues when working on
-                    -- your own configuration.
-                    -- See https://github.com/neovim/nvim-lspconfig/issues/3189
-                    -- library = {
-                        --   vim.api.nvim_get_runtime_file('', true),
-                        -- }
-                    }
-        })
-    end,
     settings = {
         Lua = {
             runtime = {
@@ -69,14 +25,39 @@ vim.lsp.config('lua_ls', {
         }
     }
 })
-
 vim.lsp.enable('lua_ls')
 
+-------------------------------------------------------------------------------
 -- C/C++
+local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 vim.lsp.config('clangd', {
-  cmd = {'clangd'},
+  cmd = {'clangd', "--query-driver=C:\\sdk\\prospero\\12.00.00.38\\host_tools\\bin\\prospero-clang.exe"},
+  --cmd = {'clang-cl', "--query-driver=C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\Llvm\\x64\\bin\\clang-cl.exe"},
   filetypes = {'c', 'cpp', 'cxx'},
   root_markers = {'compile_commands.json'},
   capabilities=cmp_capabilities
 })
 vim.lsp.enable('clangd')
+
+--vim.lsp.config("ccls", {
+--    init_options = {
+--        index = {
+--            threads = 0;
+--        };
+--    }
+--})
+--vim.lsp.enable('ccls')
+
+-------------------------------------------------------------------------------
+-- Python
+vim.lsp.enable('jedi_language_server')
+
+-------------------------------------------------------------------------------
+-- Slang (hlsl)
+vim.lsp.config('slangd', {
+    cmd = {
+        'slangd'
+    },
+    root_markers = {'slangdconfig.json'}
+})
+vim.lsp.enable('slangd')

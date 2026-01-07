@@ -411,8 +411,8 @@ widgets:
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
-      label: "<span>\uf4bc</span> {info[percent][total]}%"
-      label_alt: "<span>\uf437</span> {info[histograms][cpu_percent]}"
+      label: "<span>\uf4bc</span>CPU {info[percent][total]}%"
+      label_alt: "<span>\uf437</span>CPU {info[histograms][cpu_percent]}"
       update_interval: 2000
       cpu_thresholds:
         low: 25
@@ -439,8 +439,8 @@ widgets:
   gpu:
     type: "yasb.gpu.GpuWidget"
     options:
-      label: "<span>\uf4bc</span> {info[utilization]}%"
-      label_alt: "<span>\uf4bc</span> {info[temp]}°C | {info[mem_used]} / {info[mem_total]}"
+      label: "<span>\uf4bc</span>GPU {info[utilization]}%"
+      label_alt: "<span>\uf4bc</span>GPU {info[temp]}°C | {info[mem_used]} / {info[mem_total]}"
       update_interval: 2000
       gpu_thresholds:
         low: 25
@@ -462,8 +462,8 @@ widgets:
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
-      label: "<span>\uf4bc</span> {virtual_mem_free}/{virtual_mem_total}"
-      label_alt: "<span>\uf4bc</span> VIRT: {virtual_mem_percent}% SWAP: {swap_mem_percent}%"
+      label: "<span>\uf4bc</span>RAM {virtual_mem_free}/{virtual_mem_total}"
+      label_alt: "<span>\uf4bc</span>RAM VIRT: {virtual_mem_percent}% SWAP: {swap_mem_percent}%"
       update_interval: 5000
       callbacks:
         on_left: "toggle_label"

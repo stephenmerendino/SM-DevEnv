@@ -1,5 +1,19 @@
 {
     "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/master/schema.asc.json",
+    "P4V": {
+        "floating":[
+            {
+                "kind": "Title",
+                "id": "Submit Changelist",
+                "matching_strategy": "StartsWith"
+            },
+            {
+                "kind": "Title",
+                "id": "Select Pending Changelist",
+                "matching_strategy": "StartsWith"
+            }
+        ]
+    },
     "Workbench": {
         "floating":[
             {
