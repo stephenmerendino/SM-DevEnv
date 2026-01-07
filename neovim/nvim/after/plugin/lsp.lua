@@ -56,8 +56,13 @@ vim.lsp.enable('jedi_language_server')
 -- Slang (hlsl)
 vim.lsp.config('slangd', {
     cmd = {
-        'slangd'
+        'slangd',
+         -- include directories:
+        '-I', 'C:\\branches\\main\\shared\\src\\shaders',
+        '-I', 'C:\\branches\\main\\shared\\src\\shaders\\include',
+        -- preprocessor definitions:
+        '-D', 'ND_PSSL'
     },
-    root_markers = {'slangdconfig.json'}
+    root_markers = {'slangd.json'}
 })
 vim.lsp.enable('slangd')

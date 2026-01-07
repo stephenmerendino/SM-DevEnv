@@ -1,15 +1,10 @@
 {
     "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/master/schema.asc.json",
-    "P4V": {
+    "Maya": {
         "floating":[
             {
                 "kind": "Title",
-                "id": "Submit Changelist",
-                "matching_strategy": "StartsWith"
-            },
-            {
-                "kind": "Title",
-                "id": "Select Pending Changelist",
+                "id": "Reflection Probe Tool",
                 "matching_strategy": "StartsWith"
             }
         ]
@@ -21,6 +16,46 @@
                 "id": "Workbench.exe",
                 "matching_strategy": "Equals"
             }
+        ]
+    },
+    "Razor": {
+        "floating":[
+            {
+                "kind": "Title",
+                "id": "Razor GPU",
+                "matching_strategy": "StartsWith"
+            }
+        ]
+    },
+    "P4V": {
+        "floating":[
+            {
+                "kind": "Title",
+                "id": "Submit Changelist",
+                "matching_strategy": "StartsWith"
+            },
+            {
+                "kind": "Title",
+                "id": "Select Pending Changelist",
+                "matching_strategy": "StartsWith"
+            },
+            {
+                "kind": "Title",
+                "id": "Resolve",
+                "matching_strategy": "StartsWith"
+            },
+            {
+                "kind": "Title",
+                "id": "Shelve",
+                "matching_strategy": "StartsWith"
+            },
+            {
+                "kind": "Title",
+                "id": "Unshelve",
+                "matching_strategy": "StartsWith"
+            }
+
+
         ]
     },
     "1Password": {
