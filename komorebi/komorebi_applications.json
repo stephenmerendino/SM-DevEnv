@@ -9,6 +9,15 @@
             }
         ]
     },
+    "RenderDoc": {
+        "ignore":[
+            {
+                "kind": "Title",
+                "id": "Unsaved capture",
+                "matching_strategy": "Equals"
+            }
+        ]
+    },
     "1Password": {
         "ignore": [
             {
