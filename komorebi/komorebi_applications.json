@@ -6,6 +6,11 @@
                 "kind": "Title",
                 "id": "Reflection Probe Tool",
                 "matching_strategy": "StartsWith"
+            },
+            {
+                "kind": "Title",
+                "id": "  - xLit",
+                "matching_strategy": "StartsWith"
             }
         ]
     },

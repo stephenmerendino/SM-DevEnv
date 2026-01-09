@@ -24,6 +24,8 @@ config.use_fancy_tab_bar = false
 
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds=2000 }
 config.keys = {
+    { key = "P", mods = "LEADER",       action=wezterm.action.ActivateCommandPalette },
+
     { key = "o", mods = "LEADER",       action="TogglePaneZoomState" },
 
     { key = "%", mods = "LEADER|SHIFT", action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
